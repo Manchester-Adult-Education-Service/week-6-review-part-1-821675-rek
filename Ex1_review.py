@@ -40,8 +40,9 @@ print("-------------------------------------------\n"
 # Hint: Remember to use f-strings for clear formatting.
 #
 # Write your code below:
-
-
+name=input("Enter your name:\n").strip()
+age=int(input("Enter your age?\n"))
+print(f"Hello, {name}! You are {age} years old.")
 
 
 # Task 2: Decision Making (if / else)
@@ -64,9 +65,13 @@ print("-------------------------------------------\n"
 # Output: "Nice choice!"
 #
 # Write your code below:
-
-
-
+colour=input("Enter your favourite colour: ").lower()
+if colour=="blue":
+    print ("Nice choice!")
+elif colour=="yellow":
+    print ("That's a bright choice!")
+else:
+    print("That's an interesting colour!")
 
 # Task 3: Loops Review (for and while)
 # -------------------------------------------
@@ -96,10 +101,15 @@ print("-------------------------------------------\n"
 # (loops again)
 #
 # Write your code below:
+user="yes"
+while user=="yes":
+    number=int(input("Please enter a number between 1 and 10: "))
+    print("the number you entered is {number}: ")
+    for i in range (1,11):
+        print(f"{number} x {i} = {number * i}")
+    user=input("Do you want to try another number : yes or no: ").lower()
 
-
-
-
+#        
 # -------------------------------------------
 # Submitting Your Work (after Tasks 1–3)
 # -------------------------------------------
@@ -134,9 +144,9 @@ print("-------------------------------------------\n"
 # Output: "Your username could be: alice7"
 #
 # Write your code below:
-
-
-
+name=input("what is your first name? :").lower().strip()
+number=int(input("please enter your favourite number: "))
+print(f"{name}{number}")
 
 # Extension 2: Counting with Conditions
 # -------------------------------------------
@@ -155,9 +165,13 @@ print("-------------------------------------------\n"
 # Example: if num % 2 == 0 → even number.
 #
 # Write your code below:
-
-
-
+number=int(input("please enter a number: "))
+for i in range (1, number):
+    print(f"{i}")
+if number % 2 == 0:
+    print(f"Even number found!")
+else:
+    print(f"Odd number found!")
 
 # Extension 3: Simple Password Checker
 # -------------------------------------------
@@ -182,9 +196,15 @@ print("-------------------------------------------\n"
 # Output: Access granted.
 #
 # Write your code below:
-
-
-
+password="python123"
+user_password=input("please enter a password: ").lower().strip()
+count = 0
+while user_password!=password and count < 2:
+    print(f"Access denied.")
+    user_password=input("please enter a password: ").lower().strip()
+    count = count + 1
+if user_password==password:
+    print(f"Access granted.")
 
 # -------------------------------------------
 # ADVANCED ACTIVITY
@@ -216,9 +236,19 @@ print("-------------------------------------------\n"
 # Excellent!
 #
 # Write your code below:
-
-
-
+name=input("please enter your name: ")
+scores=[]
+for i in range (1,4):
+    scores.append(float(input(f"please enter score {i}: ")))
+print(f"student name: {name}") 
+average=sum(scores)/len(scores)
+print(f"average {average}")
+if average >=70: 
+    print(f"Excellent!")
+elif average >=50 and average <70:
+    print(f"Good effort!")
+else:
+    print(f"Needs improvement!")
 
 # -------------------------------------------
 # Submitting Your Work
